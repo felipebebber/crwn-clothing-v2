@@ -1,8 +1,7 @@
 import { useState } from "react";
 import FormInput from '../form-input/form-input.component';
-import "./sign-up.styles.scss";
-
 import Button from "../button/button.component";
+import "./sign-up.styles.scss";
 
 import { 
     auth,
@@ -90,7 +89,6 @@ const SignUpForm = () => {
                     onChange={handleChange}
                     value={confirmPassword} 
                 />
-                {/* <button type="submit">Sign Up</button> */}
                 <Button type="submit" styleType="inverted">Sign Up</Button>
             </form>
         </div>
