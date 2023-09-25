@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../../context/user.context";
-import { CartOpenContext } from "../../context/cart-open";
+import { CartContext } from "../../context/cart.context";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -13,7 +13,7 @@ import "./navigation.styles.scss";
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
-    const { open } = useContext(CartOpenContext);
+    const { open } = useContext(CartContext);
     
     const signOutHandler = async () => {
         await signOutUser();
