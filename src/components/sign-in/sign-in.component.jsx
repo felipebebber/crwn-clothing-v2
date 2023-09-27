@@ -2,7 +2,8 @@ import { useState } from "react";
 
 import FormInput from '../form-input/form-input.component';
 import Button from "../button/button.component";
-import "./sign-in.styles.scss";
+
+import { SignUpContainer, ButtonsContainer } from "./sign-in.styles";
 
 import { 
     auth,
@@ -52,7 +53,7 @@ const SignInForm = () => {
     }
 
     return (
-        <div className="sign-in-container sign-up-container">
+        <SignUpContainer>
             <h2>I already have an account.</h2>
             <p>Sign in with your email and password</p>
             <div>
@@ -73,15 +74,15 @@ const SignInForm = () => {
                         type="password" 
                         value={password}
                     />
-                    <div className="buttons-container">
+                    <ButtonsContainer>
                         <Button type="submit">Sign In</Button>
                         <Button type="button" styleType="google" onClick={signInWithGoogle}>
                             Google
                         </Button>
-                    </div>
+                    </ButtonsContainer>
                 </form>
             </div>
-        </div>
+        </SignUpContainer>
     )
 }
 

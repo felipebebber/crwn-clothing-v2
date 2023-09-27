@@ -1,18 +1,24 @@
-import { useContext } from "react";
-import { ProductsContext } from "../../context/products.context";
-
-import ProductCard from "../../components/product-card/product-card.component";
-
-import './shop.styles.scss';
+import { useContext, Fragment, useEffect } from "react";
+import { CategoriesContext } from "../../context/categories.context";
+import CategoryList from "../../components/category-list/category-list.component";
 
 const Shop = () => {
-    const { products } = useContext(ProductsContext);
+    const { categoriesMap, categoriesMapByQty, getItemsCategoriesByQty } = useContext(CategoriesContext);
+
+    useEffect(() => {
+        getItemsCategoriesByQty(4);
+    }, [categoriesMap]);
+
     return (
-        <div className="products-container">
-            {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-            ))}
-        </div>
+        <>
+            {
+                Object.keys(categoriesMapByQty).map(title => {
+                    return (
+                        <CategoryList key={title} title={title} linkToCategory={true} list={categoriesMapByQty[title]} />
+                    )
+                })
+            }
+        </>
     )
 }
 

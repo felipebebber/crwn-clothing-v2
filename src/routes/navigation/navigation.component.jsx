@@ -7,9 +7,9 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
-import { Link } from "react-router-dom";
 import Logo from '../../assets/images/crown.svg';
-import "./navigation.styles.scss";
+
+import { LogoContainer, NavigationContainer, NavLinksContainer, NavLinks } from "./navigation.styles";
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
@@ -20,24 +20,24 @@ const Navigation = () => {
     }
 
     return (
-        <nav className='navigation'>
-            <Link className="logo-container" to="/">
+        <NavigationContainer>
+            <LogoContainer to="/">
                 <img src={Logo} alt="Logo" />
-            </Link>
-            <ul className="nav-links-container">
+            </LogoContainer>
+            <NavLinksContainer>
                 <li className="nav-links-item">
-                    <Link className="nav-link" to="/shop">
+                    <NavLinks to="/shop">
                         SHOP
-                    </Link>
+                    </NavLinks>
                 </li>
                 <li className="nav-links-item">
                     {
                         currentUser ? (
-                            <span className="nav-link" onClick={signOutHandler}>SIGN OUT</span>
+                            <NavLinks as="span" onClick={signOutHandler}>SIGN OUT</NavLinks>
                         ) : (
-                            <Link className="nav-link" to="/auth">
+                            <NavLinks to="/auth">
                                 SIGN IN
-                            </Link>
+                            </NavLinks>
                         )
                     }
                 </li>
@@ -45,8 +45,8 @@ const Navigation = () => {
                     <CartIcon />
                     {open && <CartDropdown />}
                 </li>
-            </ul>
-        </nav>
+            </NavLinksContainer>
+        </NavigationContainer>
     )
 }
 

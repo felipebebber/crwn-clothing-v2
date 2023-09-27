@@ -1,7 +1,8 @@
 import { useState } from "react";
 import FormInput from '../form-input/form-input.component';
 import Button from "../button/button.component";
-import "./sign-up.styles.scss";
+
+import { SignUpContainer } from "./sign-up.styles";
 
 import { 
     auth,
@@ -57,7 +58,7 @@ const SignUpForm = () => {
     }
 
     return (
-        <div className="sign-up-container">
+        <SignUpContainer>
             <h2>Don't have an account?</h2>
             <p>Sign up with your email and password</p>
             <form onSubmit={handleSubmit}>
@@ -91,7 +92,7 @@ const SignUpForm = () => {
                 />
                 <Button type="submit" styleType="inverted">Sign Up</Button>
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 
