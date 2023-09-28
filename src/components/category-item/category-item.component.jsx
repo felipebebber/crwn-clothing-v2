@@ -1,16 +1,16 @@
-import { CategoryContainer, CategoryBackgroundImage, CategoryBodyContainer } from './category-item.styles.jsx';
+import { Container, BackgroundImage, BodyContainer } from './category-item.styles.jsx';
 
 const CategoryItem = ({ category }) => {
     const { title, id, imageUrl } = category;
     
     return (
-        <CategoryContainer>
-            <CategoryBackgroundImage style={{backgroundImage: `url(${imageUrl})`}}></CategoryBackgroundImage>
-            <CategoryBodyContainer>
+        <Container>
+            <BackgroundImage imageUrl={imageUrl}></BackgroundImage>
+            <BodyContainer>
                 <h2>{title}</h2>
                 <p>Shop Now</p>
-            </CategoryBodyContainer>
-        </CategoryContainer>
+            </BodyContainer>
+        </Container>
     )
 }
 

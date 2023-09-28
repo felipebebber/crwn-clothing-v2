@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const subColor = 'grey';
 const mainColor = 'black';
 
-const shrinkLabel = `
+const shrinkLabel = css`
   top: -14px;
   font-size: 12px;
   color: ${mainColor};
@@ -27,9 +27,8 @@ export const InputLabel = styled.div`
   top: 10px;
   transition: 300ms ease all;
   white-space: nowrap;
-  &.shrink {
-    ${shrinkLabel}
-  }
+  
+  ${({shrink}) => shrink && shrinkLabel}
 `;
 
 export const Input = styled.input`

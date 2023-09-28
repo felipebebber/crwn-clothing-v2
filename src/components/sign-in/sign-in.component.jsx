@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import FormInput from '../form-input/form-input.component';
-import Button from "../button/button.component";
+import Button, { button_style } from "../button/button.component";
 
 import { SignUpContainer, ButtonsContainer } from "./sign-in.styles";
 
@@ -76,8 +76,8 @@ const SignInForm = () => {
                     />
                     <ButtonsContainer>
                         <Button type="submit">Sign In</Button>
-                        <Button type="button" styleType="google" onClick={signInWithGoogle}>
-                            Google
+                        <Button type="button" styleType={button_style.google} onClick={signInWithGoogle}>
+                            Sign WIth Google
                         </Button>
                     </ButtonsContainer>
                 </form>

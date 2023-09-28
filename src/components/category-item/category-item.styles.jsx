@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 
-export const CategoryBackgroundImage = styled.div`
+export const BackgroundImage = styled.div`
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-image: ${({imageUrl}) => `url(${imageUrl})`}
 `;
 
-export const CategoryBodyContainer = styled.div`
+export const BodyContainer = styled.div`
     height: 90px;
     padding: 0 25px;
     display: flex;
@@ -33,7 +34,7 @@ export const CategoryBodyContainer = styled.div`
     }
 `;
 
-export const CategoryContainer = styled.div`
+export const Container = styled.div`
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
@@ -46,12 +47,12 @@ export const CategoryContainer = styled.div`
   &:hover {
     cursor: pointer;
 
-    & ${CategoryBackgroundImage} {
+    & ${BackgroundImage} {
       transform: scale(1.1);
       transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
 
-    & ${CategoryBodyContainer} {
+    & ${BodyContainer} {
       opacity: 0.9;
     }
   }
